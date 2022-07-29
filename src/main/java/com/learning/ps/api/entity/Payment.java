@@ -3,24 +3,17 @@ package com.learning.ps.api.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "PAYMENT_TB")
+@Document(collection = "payment")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Payment {
-    @Id
-    @GeneratedValue
     private int paymentId;
     private String paymentStatus;
     private String transactionId;
-    private Integer orderId;
-    private Integer amount;
+    private int orderId;
+    private double amount;
 
 }
